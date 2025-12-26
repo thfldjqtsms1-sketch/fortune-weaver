@@ -1,96 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 메인 브랜드 컬러 - 보라/자주 계열 */
+    --background: 280 20% 98%;
+    --foreground: 280 40% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 280 40% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 280 40% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* 메인 브랜드 - 자주색 */
+    --primary: 320 60% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* 보조 브랜드 - 연한 핑크 */
+    --secondary: 320 30% 92%;
+    --secondary-foreground: 320 60% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 280 15% 94%;
+    --muted-foreground: 280 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* 액센트 - 골드/오렌지 */
+    --accent: 38 95% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 280 20% 88%;
+    --input: 280 20% 88%;
+    --ring: 320 60% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* 커스텀 컬러 */
+    --deep-purple: 280 45% 25%;
+    --magenta: 320 70% 45%;
+    --pink: 340 60% 65%;
+    --gold: 38 95% 55%;
+    --coral: 15 85% 60%;
+    --mint: 160 45% 70%;
+    --sky: 200 75% 70%;
+    
+    /* 상담사 상태 */
+    --status-online: 120 60% 50%;
+    --status-busy: 38 95% 55%;
+    --status-offline: 0 0% 70%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* 그라데이션 */
+    --gradient-hero: linear-gradient(135deg, hsl(280 30% 95%) 0%, hsl(320 40% 92%) 50%, hsl(280 25% 96%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(320 60% 35%) 0%, hsl(280 50% 40%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 95% 55%) 0%, hsl(25 90% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(280 20% 98%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* 그림자 */
+    --shadow-soft: 0 4px 20px -4px hsl(280 30% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(280 30% 30% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(280 30% 30% / 0.2);
+    --shadow-glow: 0 0 40px hsl(320 60% 45% / 0.3);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* 사이드바 */
+    --sidebar-background: 280 20% 98%;
+    --sidebar-foreground: 280 40% 15%;
+    --sidebar-primary: 320 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 320 30% 92%;
+    --sidebar-accent-foreground: 320 60% 35%;
+    --sidebar-border: 280 20% 88%;
+    --sidebar-ring: 320 60% 35%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 280 25% 8%;
+    --foreground: 280 10% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 25% 12%;
+    --card-foreground: 280 10% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 280 25% 12%;
+    --popover-foreground: 280 10% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 320 55% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 25% 18%;
+    --secondary-foreground: 280 10% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 280 20% 18%;
+    --muted-foreground: 280 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 90% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 280 20% 20%;
+    --input: 280 20% 20%;
+    --ring: 320 55% 55%;
+
+    --sidebar-background: 280 25% 10%;
+    --sidebar-foreground: 280 10% 95%;
+    --sidebar-primary: 320 55% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 280 25% 18%;
+    --sidebar-accent-foreground: 280 10% 90%;
+    --sidebar-border: 280 20% 20%;
+    --sidebar-ring: 320 55% 55%;
   }
 }
 
@@ -99,7 +122,231 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}
+
+@layer components {
+  /* 상태 인디케이터 */
+  .status-online {
+    @apply relative;
+  }
+  .status-online::after {
+    content: '';
+    @apply absolute w-3 h-3 bg-[hsl(var(--status-online))] rounded-full border-2 border-white;
+    animation: pulse-status 2s ease-in-out infinite;
+  }
+  
+  .status-busy::after {
+    @apply bg-[hsl(var(--status-busy))];
+  }
+
+  /* 카드 호버 효과 */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* 버튼 스타일 */
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground font-semibold px-6 py-3 rounded-full transition-all duration-300;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-gold {
+    background: var(--gradient-gold);
+    @apply text-white font-semibold px-6 py-3 rounded-full transition-all duration-300;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px hsl(38 95% 55% / 0.4);
+  }
+
+  /* 섹션 스타일 */
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-center;
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  /* 스크롤 애니메이션 */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 프로필 이미지 */
+  .profile-image {
+    @apply rounded-full overflow-hidden border-4 border-white shadow-lg;
+    aspect-ratio: 1;
+  }
+
+  /* 그라데이션 텍스트 */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 눈 내리는 효과 */
+  .snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+  }
+
+  /* 네비게이션 메뉴 아이템 */
+  .nav-item {
+    @apply relative px-3 py-2 text-foreground/80 font-medium transition-colors duration-200;
+  }
+  .nav-item:hover {
+    @apply text-primary;
+  }
+  .nav-item::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 origin-center;
+  }
+  .nav-item:hover::after {
+    @apply scale-x-100;
+  }
+  .nav-item.active {
+    @apply text-primary;
+  }
+  .nav-item.active::after {
+    @apply scale-x-100;
+  }
+}
+
+@layer utilities {
+  /* 애니메이션 유틸리티 */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* 스크롤바 커스텀 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 키프레임 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-status {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-xl;
   }
 }
