@@ -1,9 +1,10 @@
 [build]
-  command = "bun run build"
+  command = "npm run build"
   publish = "dist"
+  ignore = "exit 0"
 
-[build.environment]
-  BUN_VERSION = "1.1.38"
+[functions]
+  directory = "netlify/functions"
 
 [[redirects]]
   from = "/*"
